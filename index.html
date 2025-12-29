@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勇者の迷路探索</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>勇者の迷路探索</h1>
+        <div class="game-info">
+            <p>矢印キー または WASD で移動</p>
+            <p>スタート(S)からゴール(G)を目指そう！</p>
+            <p>位置: <span id="position">X: 1, Y: 1</span></p>
+            <button id="bgmToggle" class="bgm-button">🔊 BGM ON</button>
+        </div>
+        <canvas id="gameCanvas" width="640" height="640"></canvas>
+        <div class="controls">
+            <div class="d-pad">
+                <button class="btn-up" id="btnUp">↑</button>
+                <div class="d-pad-middle">
+                    <button class="btn-left" id="btnLeft">←</button>
+                    <div class="d-pad-center"></div>
+                    <button class="btn-right" id="btnRight">→</button>
+                </div>
+                <button class="btn-down" id="btnDown">↓</button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
