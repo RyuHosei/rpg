@@ -11,34 +11,39 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    margin: 0;
 }
 
 .container {
     background: white;
     border-radius: 15px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     text-align: center;
+    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
 }
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 15px;
+    font-size: clamp(1.3em, 5vw, 2em);
 }
 
 .game-info {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 15px;
+    padding: 12px;
     background: #f5f5f5;
     border-radius: 10px;
 }
 
 .game-info p {
-    margin: 5px 0;
+    margin: 4px 0;
     color: #555;
-    font-size: 14px;
+    font-size: clamp(12px, 2.5vw, 14px);
 }
 
 #position {
@@ -77,6 +82,10 @@ h1 {
     background: #87CEEB;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .controls {
@@ -129,23 +138,149 @@ h1 {
     transform: translateY(2px);
 }
 
+/* タブレット・小型画面 */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
 
-    h1 {
-        font-size: 1.5em;
+    .game-info {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .game-info p {
+        font-size: 13px;
+        margin: 3px 0;
     }
 
     .d-pad button {
-        width: 70px;
-        height: 70px;
-        font-size: 28px;
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
     }
 
     .d-pad-center {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .controls {
+        margin-top: 15px;
+    }
+}
+
+/* スマートフォン・極小画面 */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .game-info {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    .game-info p {
+        font-size: 12px;
+        margin: 2px 0;
+    }
+
+    .bgm-button {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    #gameCanvas {
+        border-width: 2px;
+    }
+
+    .controls {
+        margin-top: 10px;
+    }
+
+    .d-pad {
+        gap: 3px;
+    }
+
+    .d-pad-middle {
+        gap: 3px;
+    }
+
+    .d-pad button {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .d-pad-center {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* 横向き画面対応 */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 1.3em;
+        margin-bottom: 5px;
+    }
+
+    .game-info {
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+
+    .game-info p {
+        font-size: 11px;
+        margin: 2px 0;
+    }
+
+    .bgm-button {
+        padding: 4px 8px;
+        font-size: 11px;
+        margin-top: 3px;
+    }
+
+    .controls {
+        margin-top: 5px;
+    }
+
+    .d-pad {
+        gap: 2px;
+    }
+
+    .d-pad-middle {
+        gap: 2px;
+    }
+
+    .d-pad button {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .d-pad-center {
+        width: 45px;
+        height: 45px;
     }
 }
